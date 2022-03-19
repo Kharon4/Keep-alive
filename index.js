@@ -25,7 +25,7 @@ const log = (basePath, text) => {
 // get uuid
 app.get('/', (req, res) => {
     const response = v4();
-    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress ;
+    const ip = req.headers['X-Real-IP'] || req.socket.remoteAddress ;
     log(path.join('logs','sent'),JSON.stringify({ip,response}));
     res.send(response);
 });
