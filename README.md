@@ -1,6 +1,5 @@
 # Keep Alive
 
-Given a list of servers. The running instance will try to fetch the root endpoint from.
-Use this to keep servers alive.
+Fetches data from the given URLs at set intervals.
 
-Add server list and ping delay time in config.json
+Update config.json to update serverList, Port, Log, and fetchDelay.

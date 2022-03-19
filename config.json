@@ -1,4 +1,6 @@
 {
+    "port": 3007,
     "pingDelay": 600000,
-    "servers" : []
+    "logData": true,
+    "serverList" : []
 }
