@@ -1,0 +1,16 @@
+{
+  "name": "autopinger",
+  "version": "1.0.0",
+  "description": "Given a list of servers running autopinger. The running instance will try to ping them using a custom endpoint.\r Use this to keep servers alive.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3",
+    "uuid": "^8.3.2"
+  }
+}
