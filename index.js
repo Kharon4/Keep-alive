@@ -5,7 +5,7 @@ const axios = require('axios');
 const fs = require('fs').promises;
 const path = require('path');
 
-const {serverList,pingDelay,port,logData} =  require('./config.json');
+const {serverList,pingDelay,port,enableLog} =  require('./config.json');
 
 // custom write
 const writeFile = async(filePath, contents)=>{
@@ -15,7 +15,7 @@ const writeFile = async(filePath, contents)=>{
 
 // logging funtion
 const log = (basePath, text) => {
-    if(!logData)return;
+    if(!enableLog)return;
     let date = new Date();
     const folderName = date.toLocaleDateString('en-GB', { timeZone: 'IST' }).replaceAll('/', '_');
     const fileName = date.toLocaleTimeString('en-GB', { timeZone: 'IST' }).replaceAll(':', '_') + '.txt';
