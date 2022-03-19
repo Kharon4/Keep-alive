@@ -6,6 +6,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const {serverList,pingDelay,port,enableLog} =  require('./config.json');
+const { response } = require('express');
 
 // custom write
 const writeFile = async(filePath, contents)=>{
@@ -41,10 +42,17 @@ const pingServers = async () => {
 
     const logObj = {};
 
-    responses.forEach(response => {
-        logObj[response.value.config.url] = {
-            status: response.value.status,
-            body: response.value.data
+    responses.forEach((response, index) => {
+        if(!response.value){
+            logObj[serverList[index]] = {
+                status: response.status,
+                reason: response.reason
+            }
+        }else{
+            logObj[serverList[index]] = {
+                status: response.value.status,
+                body: response.value.data
+            }
         }
     });
 
