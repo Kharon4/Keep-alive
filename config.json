@@ -1,6 +1,9 @@
 {
     "port": 3007,
     "pingDelay": 600000,
+    "pingVariation": 300000,
     "enableLog": true,
-    "serverList" : []
+    "mailOnError": true,
+    "serverList" : ["randomTestServer.com"],
+    "thisServerName": "serverName"
 }
